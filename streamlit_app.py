@@ -10,8 +10,10 @@ with st.sidebar:
     chillers = st.number_input("Number of chillers", 1, 10, 1)
     capacity_per_chiller = st.number_input("Capacity per chiller (kW)", 100, 10000, 1000)
     load_factor = st.number_input("Avg load factor (during operating hours)", 0.01, 1.0, 0.35, step=0.01)
-    operating_hours = st.number_input("Annual operating hours", 500, 8760, 3600)
     operating_months = st.number_input("Operating months per year", 1, 12, 5)
+    # Calculate operating hours from months (Excel-style)
+operating_hours = operating_months * 30 * 24
+st.write(f"**Calculated operating hours:** {operating_hours} h/year (months × 30 × 24)")
 
     st.header("Electricity & FX")
     electricity_price = st.number_input("Electricity price (GEL/kWh)", 0.01, 2.0, 0.30, step=0.01)
