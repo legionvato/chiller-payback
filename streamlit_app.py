@@ -103,15 +103,3 @@ if annual_savings > 0 and capex_diff > 0:
     m3.metric("Payback (operating months)", f"{payback_operating_months:.1f}")
 else:
     st.warning("No payback with current inputs (either savings ≤ 0 or extra CAPEX ≤ 0).")
-
-with st.expander("Inputs (tap to open)", expanded=True):
-    chillers = st.number_input(...)
-    capacity_per_chiller = st.number_input(...)
-    load_factor = st.number_input(...)
-    operating_months = st.number_input(...)
-    electricity_price = st.number_input(...)
-    eur_to_gel = st.number_input(...)
-    eer_1 = st.number_input(...)
-    price_1 = st.number_input(...)
-    eer_2 = st.number_input(...)
-    price_2 = st.number_input(...)
